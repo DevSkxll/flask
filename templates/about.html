@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>About</h1>
+<br>
+<h2>THIS WAS MADE BY FLASK!!!</h2>
+{% if company_name %}
+     <h2>course develope by {{company_name}}.</h2>
+{% else %}
+     <h2>Enjoy the course!</h2>
+{% endif %}
+{% endblock %}

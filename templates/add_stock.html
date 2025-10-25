@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add A Stock</h1>
+<form method="post">
+    <label for="stocksymbol">Stock symbol:</label>
+    <input type="text"  id="stocksymbol" name="stocksymbol" />
+    <br>
+    <label for="numberOfShares">Number Of Shares:</label>
+    <input type="text" id="numberOfShares" name="Number_Of_Shares">
+    <br>
+    <label for="purchaseprice">Purchase Price ($):</label>
+    <input type="text" id="purchaseprice" name="purchase_price" />
+    <br>
+    <input type="submit">
+</form>
+{% endblock %}
