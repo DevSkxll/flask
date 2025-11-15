@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, flash
 
 app = Flask(__name__)
 
@@ -24,6 +24,7 @@ def login():
 
 @app.route('/about')
 def about():
+    flash('Thanks for reading useless information!!!', 'info')
     return render_template('/about.html', company_name='gearmindsacademy.com')
 
 @app.route('/add_stock' , methods=['GET' , 'POST'])
@@ -36,6 +37,9 @@ def add_stock():
         session['stock_symbol'] = request.form['stock_symbol']
         session['number_of_shares'] = request.form['number_of_shares']
         session['purchase_price'] = request.form['purchase_price']
+
+        flash(f"added new stock ({ request.form['stock_symbol'] })", 'success')
+
         return redirect(url_for('list_stocks'))  #NEW!!
         
     return render_template('add_stock.html')
